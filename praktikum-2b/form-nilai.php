@@ -8,8 +8,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<body>
+<?php
+require_once "total-belanja.php";
+?>
 
+<body>
 <!-- form nilai -->
 <h4 class="border justify-content-center p-3">Sistem Penilaian</h4>
 <form action="nilai-mahasiswa.php" method="POST" class="container m-5">
