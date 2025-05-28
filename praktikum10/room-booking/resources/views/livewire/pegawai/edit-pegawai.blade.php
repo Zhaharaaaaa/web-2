@@ -1,5 +1,5 @@
 <div class="container mx-auto">
-    <h1 class="text-2xl font-bold mb-4">Edit Pegawai</h1>
+    <h1 class="text-2xl font-bold mb-4">Create Pegawai</h1>
     <form wire:submit.prevent="save" class="space-y-4">
         <flux:input
             type="text"
@@ -19,15 +19,15 @@
             required
         />
 
-        <flux:select
+         <flux:select
             id="unitkerja_id"
-            wire:model.defer="unitkerja_id"
+            wire:model.defer="unit_kerja_id"
             label="Unit Kerja"
-            required
-        >
+            placeholder="Pilih Unit Kerja"
+            required>
             <flux:select.option value="" label="-- Pilih Unit Kerja --" />
-            @foreach ($unitkerjas as $unitkerja)
-                <flux:select.option value="{{ $unitkerja->id }}" label="{{ $unitkerja->nama }}" />
+            @foreach ($unitKerjas as $unit)
+                <option value="{{ $unit->id }}">{{ $unit->nama }}</option>
             @endforeach
         </flux:select>
 
@@ -39,4 +39,3 @@
         </flux:button>
     </form>
 </div>
-

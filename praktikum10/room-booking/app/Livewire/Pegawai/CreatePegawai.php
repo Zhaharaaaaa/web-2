@@ -7,31 +7,33 @@ use App\Models\UnitKerja;
 use Livewire\Component;
 
 class CreatePegawai extends Component
-{   
-    public $nip, $nama, $unitkerja_id;
+{
+    public $nip = '';
+    public $nama = '';
+    public $unit_kerja_id = '';
 
     public function save()
     {
         $this->validate([
-            'nip' => 'required',
-            'nama' => 'required',
-            'unitkerja_id' => 'required',
+            'nip' => 'required|string|max:10',
+            'nama' => 'required|string|max:50',
+            'unit_kerja_id' => 'required|exists:unit_kerja,id',
         ]);
 
         Pegawai::create([
             'nip' => $this->nip,
             'nama' => $this->nama,
-            'unitkerja_id' => $this->unitkerja_id,
+            'unit_kerja_id' => $this->unit_kerja_id,
         ]);
 
-        session()->flash('message', 'Pegawai berhasil ditambahkan!');
-        return $this->redirectRoute('pegawai.index');
+        session()->flash('message', 'Pegawai berhasil ditambahkan.');
+        return redirect()->route('pegawai.index');
     }
 
     public function render()
     {
         return view('livewire.pegawai.create-pegawai', [
-            'unitkerjas' => UnitKerja::all(),
+            'unitKerjas' => UnitKerja::all(),
         ]);
     }
 }

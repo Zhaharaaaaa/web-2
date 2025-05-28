@@ -19,15 +19,15 @@
             required
         />
 
-        <flux:select
+         <flux:select
             id="unitkerja_id"
-            wire:model.defer="unitkerja_id"
+            wire:model.defer="unit_kerja_id"
             label="Unit Kerja"
-            required
-        >
+            placeholder="Pilih Unit Kerja"
+            required>
             <flux:select.option value="" label="-- Pilih Unit Kerja --" />
-            @foreach ($unitkerjas as $unitkerja)
-                <flux:select.option value="{{ $unitkerja->id }}" label="{{ $unitkerja->nama }}" />
+            @foreach ($unitKerjas as $unit)
+                <option value="{{ $unit->id }}">{{ $unit->nama }}</option>
             @endforeach
         </flux:select>
 

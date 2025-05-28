@@ -10,7 +10,7 @@ class ListPegawai extends Component
     public function render()
     {
         return view('livewire.pegawai.list-pegawai', [
-            'pegawais' => Pegawai::with('unitkerja')->get(),
+            'pegawais' => Pegawai::with('unitKerja')->get(),
         ]);
     }
 

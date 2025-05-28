@@ -25,8 +25,7 @@
                 <td class="py-2 px-4 border border-gray-300">{{ $pegawai->id }}</td>
                 <td class="py-2 px-4 border border-gray-300">{{ $pegawai->nip }}</td>
                 <td class="py-2 px-4 border border-gray-300">{{ $pegawai->nama }}</td>
-                <td class="py-2 px-4 border border-gray-300"> {{ $pegawai->unitkerja->nama ?? '-' }}
-                </td>
+                <td class="py-2 px-4 border border-gray-300"> {{ $pegawai->unitkerja->nama ?? '-' }}</td>
                 <td class="py-2 px-4 border border-gray-300">
                     <flux:button :href="route('pegawai.edit', $pegawai)">Edit</flux:button>
                     <flux:button variant="danger" wire:click="delete({{ $pegawai->id }})" wire:confirm="Are you sure?">Delete</flux:button>
