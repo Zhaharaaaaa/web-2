@@ -15,6 +15,9 @@
         <flux:navlist.group :heading="__('Platform')" class="grid">
             <flux:navlist.item icon="home" :href="route('dashboard')" :current="request()->routeIs('dashboard')" wire:navigate>{{ __('Dashboard') }}</flux:navlist.item>
             <flux:navlist.item icon="building-office" :href="route('ruang.index')" :current="request()->routeIs('ruang')" wire:navigate>{{ __('Manajemen Ruang') }}</flux:navlist.item>
+            <flux:navlist.item icon="building-office-2" :href="route('unitkerja.index')" :current="request()->routeIs('unitkerja')" wire:navigate>{{ __('Manajemen Unit Kerja') }}</flux:navlist.item>
+            <flux:navlist.item icon="users" :href="route('pegawai.index')" :current="request()->routeIs('pegawai')" wire:navigate>{{ __('Manajemen Pegawai') }}</flux:navlist.item>
+            <flux:navlist.item icon="clipboard" :href="route('peminjaman.index')" :current="request()->routeIs('peminjaman')" wire:navigate>{{ __('Manajemen Peminjaman') }}</flux:navlist.item>
             </flux:navlist.group>
         </flux:navlist>
 
